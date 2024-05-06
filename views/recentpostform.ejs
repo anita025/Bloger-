@@ -1,0 +1,95 @@
+<%- include('header') %>
+        <div class="page-wrapper">
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid pt-4 px-4">
+                            <div class="row g-4">
+                                <div class="col-sm-12 col-xl-6">
+                                    <div class="bg-light rounded h-100 p-4">
+                                        <h6 class="mb-4">Recent Post Form</h6>
+                                        <form method="post" action="/addpost" enctype="multipart/form-data">
+                                            <div class="mb-3">
+                                                <label for="Main Title" class="form-label">Main Title</label>
+                                                <input type="txet" name="title" class="form-control" id="exampleInputEmail1">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="Sub Title" class="form-label">Sub Title</label>
+                                                <input type="text" name="subtitle" class="form-control" id="exampleInputPassword1">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="File" class="form-label">Uploads Image</label>
+                                                <input type="file" name="image" class="form-control" id="exampleInputPassword1">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Add slider</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid pt-2 px-3">
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <div class="bg-light rounded h-100 p-4">
+                                        <h6 class="mb-4">View Admin side</h6>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">id</th>
+                                                        <th scope="col">Post Title</th>
+                                                        <th scope="col">Post Subtitle</th>
+                                                        <th scope="col">Post Image</th>
+                                                        <th scope="col">Action</th>
+                                                        <th scope="col">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% data.map((val, index)=>{ %>
+                    
+                                                        <tr>
+                                                            <td>
+                                                                <%= index + 1 %>
+                                                            </td>
+                                                            <td>
+                                                                <%= val.title %>
+                                                            </td>
+                                                            <td>
+                                                                <%= val.subtitle %>
+                                                            </td>
+                                                            <td>
+                                                                <img src="<%= val.image %>" alt="Image" width="100">
+                                                            </td>
+                                                            <td>
+                                                                <a href="/deletePost/<%= val._id %>" class="btn btn-danger">Delete</a> ||
+                                                                <a href="/editPost/<%= val.id %>" class="btn btn-success">Edit</a>
+                                                            </td>
+                                                            <td>
+                                                                <% if(val.status==='1' ){ %>
+                                                                    <a href="/postActive/<%= val.id %>" class="btn btn-primary">Active</a>
+                                                                    <% }else{ %>
+                                                                        <a href="/postDeactive/<%= val.id %>"
+                                                                            class="btn btn-warning">Deactive</a>
+                                                                        <% } %>
+                                                            </td>
+                                                        </tr>
+                    
+                                                        <% }) %>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+     
+  
+   
+    <%- include('footer') %>
+
+
+    

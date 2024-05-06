@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body class="bg-dark">
+
+    <div class="page-wrapper ">
+
+
+        <div class="container ">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row d-flex justify-content-center align-items-center mt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form method="post" action="/updateblog/<%= data._id %>" class="form-horizontal" enctype="multipart/form-data">
+                            <div class="card-body">
+
+                                <h4 class="card-title">Update Blog</h4>
+
+                                <div class="form-group row">
+                                    <label for="fname"
+                                        class="col-sm-3 text-right control-label col-form-label">Blog Title</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="<%= data.title %>" name="title">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mt-3">
+                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Blog Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea type="text" class="form-control"
+                                            name="description" rows="5" cols="20"><%= data.description %></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mt-3">
+                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Blog Author</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" value="<%= data.author %>"
+                                            name="author">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mt-3">
+                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Blog Date</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" value="<%= data.date %>"
+                                            name="date">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mt-3">
+                                    <label for="fname"
+                                        class="col-sm-3 text-right control-label col-form-label">Blog Image</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" class="form-control" name="image">
+                                        <img src="/<%= data.image %>" class="mt-2" width="150" alt="Image">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- editor -->
+
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .right-sidebar -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
